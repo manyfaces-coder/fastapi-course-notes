@@ -18,3 +18,9 @@ class User(Base):
         back_populates="user"
     )  # Список т.к. у пользователя может быть много постов
     profile: Mapped["Profile"] = relationship(back_populates="user")
+
+    def __str__(self):
+        return f"{self.__class__.__name__}(id={self.id}, username={self.username!r})"
+
+    def __repr__(self):
+        return str(self)

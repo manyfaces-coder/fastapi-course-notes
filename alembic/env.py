@@ -30,7 +30,7 @@ target_metadata = Base.metadata  # автогенерация миграций
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
 config.set_main_option(
-    "sqlalchemy.url", settings.db_url
+    "sqlalchemy.url", settings.db.url
 )  # переписаны настройки бд на наши
 
 

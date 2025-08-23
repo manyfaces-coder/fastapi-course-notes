@@ -22,3 +22,8 @@ class Post(UserRelationMixin, Base):
     # user: Mapped[User] = relationship(
     #     back_populates="posts"
     # )  # ссылаем на объект User и нужно указать, какое поле используем, чтобы попасть сюда с юзера
+    def __str__(self):
+        return f"{self.__class__.__name__}(id={self.id}, username={self.title!r}, user_id={self.user_id})"
+
+    def __repr__(self):
+        return str(self)
